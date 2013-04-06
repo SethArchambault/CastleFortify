@@ -12,3 +12,7 @@ http://castlefortify.com/?id=9a66737
 
 1. Edit config.php with proper database connection info
 2. Import sql into database (/sql/castle_fortify.sql)
+
+# Future
+
+- API for uploading and downloading map code, so you can hook your app into CastleFortify
