@@ -151,7 +151,7 @@ Send ajax of code > database > generate unique id > send back to client
     <p class="alert alert-info">Any changes you make to the map will update the code instantly.</p>
     <textarea id="data" rows="5" class="span5"><?= $code ?>
     </textarea><br>
-    <a href="" class="btn" id="load-code">Re-Generate Map</a>
+    <a href="" class="btn" id="load-code">Re-Generate Map from Code</a>
     </div> <!-- well -->
   </div> <!-- tab-pane -->
 </div> <!-- tab-content -->
@@ -261,22 +261,26 @@ $('#load-code').click(function(e) {
     e.preventDefault();
     generateMap();
 });
-
 $('#save').click(function(e) {
     e.preventDefault();
-    $.post('/save_map.php', {"code" :$('#data').val().trim() }, function(data){
-        if (data.status == "success") 
+
+    $('#save-result').html("Saving...");
+    $.post('/save_map.php', 
         {
-            $('#save-result').html(data.message + "<br><br><textarea class='span5'>" + data.link + "</textarea>");
-            $('#save-result').attr('class', 'alert alert-info');           
-        }
-        else
-        {
-            $('#save-result').text(data.message);
-            $('#save-result').attr('class', 'alert alert-error');
-        }
- 
-    }, 'json');
+            "code" : $('#data').val().trim() 
+        }, 
+        function(data){
+            if (data.status == "success") 
+            {
+                $('#save-result').html(data.message + "<br><br><textarea class='span5'>" + data.link + "</textarea>");
+                $('#save-result').attr('class', 'alert alert-info');           
+            }
+            else
+            {
+                $('#save-result').text(data.message);
+                $('#save-result').attr('class', 'alert alert-error');
+            }    
+        }, 'json');
 });
 
 </script>
