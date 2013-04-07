@@ -17,6 +17,7 @@ Thanks for checking it out, and let me know if you have any ideas on how to make
 
 # Future
 
+- house cost/value calculator (via Nystical)
 - API for uploading and downloading map code, so you can hook your app into CastleFortify
 - Some way to browse screenshots of all the puzzles (maybe a separate web app)
 - Some way to give feedback and suggest ideas
