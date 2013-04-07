@@ -15,6 +15,10 @@ Thanks for checking it out, and let me know if you have any ideas on how to make
 1. Edit config.php with proper database connection info
 2. Import sql into database (/sql/castle_fortify.sql)
 
+# Roadmap for Future Versions
+
+[Follow on Trello](https://trello.com/board/castle-fortify/5161a8347040e6623a009092)
+
 # Future
 
 - house cost/value calculator (via Nystical)
