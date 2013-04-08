@@ -22,6 +22,7 @@ Thanks for checking Castle Fortify out, and let me know if you have any ideas on
 # Join the Discussion
 
 [Official Castle Doctrine Forum Post](http://thecastledoctrine.net/forums/viewtopic.php?id=33&p=1)
+
 [Post on Reddit](http://www.reddit.com/r/CastleDoctrine/comments/1bt3bn/castlefortify_share_and_save_your_castle_designs/)
 
 Thanks for all your feedback!
