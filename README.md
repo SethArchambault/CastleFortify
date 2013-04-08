@@ -17,7 +17,7 @@ Thanks for checking it out, and let me know if you have any ideas on how to make
 
 # Roadmap for Future Versions
 
-[Follow on Trello](https://trello.com/board/castle-fortify/5161a8347040e6623a009092)
+[View Roadmap on Trello](https://trello.com/board/castle-fortify/5161a8347040e6623a009092)
 
 # Join the Discussion
 
