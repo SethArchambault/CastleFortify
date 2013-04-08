@@ -18,18 +18,3 @@ Thanks for checking it out, and let me know if you have any ideas on how to make
 # Roadmap for Future Versions
 
 [Follow on Trello](https://trello.com/board/castle-fortify/5161a8347040e6623a009092)
-
-# Future
-
-- house cost/value calculator (via Nystical)
-- API for uploading and downloading map code, so you can hook your app into CastleFortify
-- Some way to browse screenshots of all the puzzles (maybe a separate web app)
-- Some way to give feedback and suggest ideas
-
-# Proposed Ideas
-
-- Floor graphic instead of black (plus floor graphic behind every image
-- Walls link together like in the game
-- Notes to point out the significance of certain structures
-- Login and see all the designs you've looked at
-- Description / title / date found
