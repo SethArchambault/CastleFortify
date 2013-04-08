@@ -8,7 +8,7 @@ http://castlefortify.com
 Here's a map I often use:
 http://castlefortify.com/?id=9a66737
 
-Thanks for checking it out, and let me know if you have any ideas on how to make it better!
+Thanks for checking Castle Fortify out, and let me know if you have any ideas on how to make it better!
 
 # Install
 
