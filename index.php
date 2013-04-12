@@ -501,7 +501,7 @@ function generateMapFromJson()
 
 function getKey(collection, value)
 {   
-    var key = null;
+    var key = "empty-floor";
     $.each(collection, function(k, v) {
         if (v.trim() == value) 
         {
