@@ -6,7 +6,7 @@ Save and Share your Castle Doctrine designs. Also, designs are saved in simple J
 http://castlefortify.com
 
 Here's a map I often use:
-http://castlefortify.com/?id=9a66737
+http://castlefortify.com/?id=1eb1be1
 
 Thanks for checking Castle Fortify out, and let me know if you have any ideas on how to make it better!
 
