@@ -579,6 +579,8 @@ function generateMap()
 
 $('#load-code').click(function(e) {
     e.preventDefault();
+    build_view = "normal";
+    $('#wire_view_js').prop('checked', false);
     generateMap();
 });
 $('#save').click(function(e) {
@@ -648,6 +650,8 @@ $('#code_selection').change(function() {
 });
 
 $('#data_template').change(function() {
+    build_view = "normal";
+    $('#wire_view_js').prop('checked', false);
     generateCode();
 });
 </script>
