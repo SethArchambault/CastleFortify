@@ -213,7 +213,8 @@ Send ajax of code > database > generate unique id > send back to client
     "cat" : "c",
     "daughter" : "C",
     "vault" : "V",
-    "wife" : "i"
+    "wife" : "i",
+    "no-change" : "x"
 }}
         </textarea>
     </div> <!-- span5 -->
@@ -541,6 +542,11 @@ function generateMapFromCustom()
             continue;
         }
         tile = getKey(template_data.template, custom_map[n]);
+        if (tile == "no-change")
+        {
+            x++;
+            continue;
+        }
         // console.log(tile);
         if (build_view == "wire")
         {
