@@ -182,12 +182,12 @@ Send ajax of code > database > generate unique id > send back to client
     </select>
     <p class="alert alert-info">Any changes you make to the map will update the code instantly.</p>
     <div class="row">
-    <div class="span5">
-    <textarea id="data" rows="5" class="span5"><?= $code ?>
+    <div class="span6">
+    <textarea id="data" rows="10" class="span6" style="font-family:monospace;"><?= $code ?>
     </textarea><br>
     </div> <!-- span5 -->
-    <div class="span5">
-        <textarea id="data_template" rows="5" class="span5" style="display:none;">
+    <div class="span4">
+        <textarea id="data_template" rows="10" class="span4" style="display:none;">
 { "template" : {
     "empty-floor" : "_",
     "wooden-wall" : "w",
@@ -195,12 +195,12 @@ Send ajax of code > database > generate unique id > send back to client
     "concrete-wall" : "c",
     "doors" : "d",
     "window" : "n",
-    "pit" : "p",
-    "power" : "v",
+    "pit" : "P",
+    "power" : "Z",
     "wire" : ".",
     "wired-wooden-wall" : "W",
-    "pressure-toggle-switch-off" : "o",
-    "pressure-toggle-switch-on" : "O",
+    "pressure-toggle-switch-off" : "f",
+    "pressure-toggle-switch-on" : "o",
     "sticking-pressure-switch" : "S",
     "rotary-toggle-switch" : "|",
     "wire-bridge" : "B",
@@ -219,7 +219,7 @@ Send ajax of code > database > generate unique id > send back to client
         </textarea>
     </div> <!-- span5 -->
     </div> <!-- row -->
-    <a href="" class="btn" id="load-code">Re-Generate Map from Code</a>
+    <a href="" class="btn" id="load-code">Apply Code to Map</a>
     </div> <!-- well -->
   </div> <!-- tab-pane -->
 </div> <!-- tab-content -->
@@ -364,7 +364,6 @@ function getPrice(tile)
 
 function generateCode()
 {
-    console.log($('#code_selection').val());
     switch($('#code_selection').val())
     {
         case 'json':
@@ -464,9 +463,7 @@ function wireView(tile)
     }
 }
 
-// generate map from code
-
-function generateMap()
+function generateMapFromJson()
 {
     var json = $('#data').val().trim();
     if (json == "")
@@ -501,11 +498,92 @@ function generateMap()
     }
 }
 
+
+function getKey(collection, value)
+{   
+    var key = null;
+    $.each(collection, function(k, v) {
+        if (v.trim() == value) 
+        {
+            key = k;
+        }
+    });
+    return key;
+
+}
+
+// generate map from custom
+
+function generateMapFromCustom()
+{
+    // console.log('custom generate');
+    var custom_map = $('#data').val().trim();
+    var template_json = $('#data_template').val().trim();
+    try
+    {
+        template_data = $.parseJSON(template_json);
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+
+    var total_price = 0;
+
+    var tile = "";
+    var x = 0;
+    var y = 0;
+    for(var n = 0; n < custom_map.length; n++)
+    {
+        if (custom_map[n] == "\n") 
+        {
+            y++;
+            x=0;
+            continue;
+        }
+        tile = getKey(template_data.template, custom_map[n]);
+        // console.log(tile);
+        if (build_view == "wire")
+        {
+            tile = wireView(tile);
+        }
+        $('#x'+x+'y'+y).attr('class', 'square '+tile);
+        $('#x'+x+'y'+y).attr('data-current-tile', tile);
+        x++;
+        total_price += getPrice(tile);
+    }
+    if (build_view == "normal" && total_price > 0)
+    {
+        $('#total_price_js').html("<strong>Value</strong> $"+total_price);    
+    }
+}
+
+
+// generate map from code
+
+function generateMap()
+{
+    switch($('#code_selection').val())
+    {
+        case 'json':
+            generateMapFromJson();
+            return;
+        case 'custom':
+            generateMapFromCustom();
+            return;
+        default:
+            generateMapFromJson();
+            return;
+    }
+
+}
+
 $('#load-code').click(function(e) {
     e.preventDefault();
     generateMap();
 });
 $('#save').click(function(e) {
+    $('#code_selection').val('json');
     e.preventDefault();
     build_view = "normal";
     $('#wire_view_js').prop('checked', false);
