@@ -79,7 +79,7 @@ Send ajax of code > database > generate unique id > send back to client
         #entrance {position:absolute; margin-left:-30px; padding:4px 0 0 10px; font-weight:bold; border:1px solid #999; width:18px; height:24px; background:#ffff55;}
 
         .tile {width:28px; height:28px;float:left;padding-right:3px;}
-        #home {width:960px;}
+        #home {width:860px;}
         .square {width:28px; height:28px; float:left;}
         .square:hover {background:#333;}
         .clear {clear:both;}
