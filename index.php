@@ -44,7 +44,7 @@ Send ajax of code > database > generate unique id > send back to client
 
 <html>
 <head>
-    <title>Castle Fortify</title>
+    <title>Save and share your Castle Doctrine designs - Castle Fortify</title>
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <style type="text/css">
@@ -93,7 +93,7 @@ Send ajax of code > database > generate unique id > send back to client
   <div class="navbar-inner">
     <div class="container">
         <div class="span11">
-        <a class="brand" href="#">Castle Fortify</a>
+        <a class="brand" href="/">Castle Fortify</a>
         <ul class="nav nav-tabs" id="myTab">
           <li class="active"><a href="#draw-panel" data-toggle="tab">Build</a></li>
           <li><a href="#code-panel" data-toggle="tab">Code</a></li>
@@ -112,9 +112,8 @@ Send ajax of code > database > generate unique id > send back to client
 <div class="tab-content">
   <div class="tab-pane active" id="draw-panel">
 
+    <h1>Build</h1>
     <div id="tiles" class="well">
-    <h1>Tiles</h1>
-
         <div class="tile empty-floor" data-current-tile="empty-floor"></div>
         <div class="tile wooden-wall" data-current-tile="wooden-wall"></div>
         <div class="tile steel-wall" data-current-tile="steel-wall"></div>
@@ -257,7 +256,7 @@ var save_disabled = false;
 
 for (var y = 0; y < rows; y++) 
 {
-    if (y == 15) 
+    if (y == 14) 
     {
         $('#home').append('<div id="entrance">></div>');
     }
