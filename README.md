@@ -24,3 +24,7 @@ Thanks for checking Castle Fortify out, and let me know if you have any ideas on
 [Official Castle Doctrine Forum Post](http://thecastledoctrine.net/forums/viewtopic.php?id=33&p=1)
 
 Thanks for all your feedback!
+
+# Versioning
+
+  <major>.<minor>.<patch>
