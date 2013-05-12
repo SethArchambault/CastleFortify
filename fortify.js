@@ -11,27 +11,32 @@ var json_map_data;
 
 
 var doctrine_template = {
-    "empty-floor" : 0  , 
-    "wooden-wall" : 1  , 
-    "steel-wall" : 2  , 
-    "concrete-wall" : 3  , 
-    "window" : 20 , 
-    "doors" : 21 , 
-    "powered-door" : 30 , 
-    "wired-wooden-wall" : 51 , 
-    "pitbull" : 70 , 
-    "sticking-pressure-switch" : 100, 
-    "pressure-toggle-switch-off" : 101, 
-    "wire" : 102, 
-    "power" : 103, 
-    "voltage-triggered-switch" : 104, 
-    "voltage-triggered-inverted-switch" : 105, 
-    "wire-bridge" : 106, 
-    "rotary-toggle-switch" : 107, 
-    "pressure-toggle-switch-on" : 108, 
-    "electric-floor" : 110, 
-    "pit" : 111, 
-    "trap-door" : 112
+    "empty-floor" : 0,
+    "wooden-wall" : 1  ,
+    "steel-wall" : 2  ,
+    "concrete-wall" : 3  ,
+    "window" : 20 ,
+    "doors" : 21 ,
+    "powered-door" : 30 ,
+    "wired-wooden-wall" : 51 ,
+    "pitbull" : 70 ,
+    "sticking-pressure-switch" : 100,
+    "pressure-toggle-switch-off" : 101,
+    "wire" : 102,
+    "power" : 103,
+    "voltage-triggered-switch" : 104,
+    "voltage-triggered-inverted-switch" : 105,
+    "wire-bridge" : 106,
+    "rotary-toggle-switch" : 107,
+    "pressure-toggle-switch-on" : 108,
+    "electric-floor" : 110,
+    "pit" : 111,
+    "trap-door" : 112,
+    "cat" : 72,
+    "chiwawa" : 71,
+    "daughter" : 1040,
+    "vault" : 999,
+    "wife" : 1010
 };
 
   
@@ -170,6 +175,8 @@ function generateDoctrine()
     var doctrine = "";
     var tile = ""; 
     var total_price = 0;
+    // exterior walls
+    doctrine = "998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#";
     for (var y = 0; y < rows; y++) 
     {
         for (var x = 0; x < columns; x++) 
@@ -182,8 +189,9 @@ function generateDoctrine()
             }
             total_price += getPrice(tile);
         }
+        doctrine += "998#998#";
     }
-    doctrine = doctrine.slice(0, -1);
+    doctrine += "998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998";
 
     if (total_price > 0)
     {
@@ -322,30 +330,55 @@ function generateMapFromJson()
 function generateMapFromDoctrine()
 {
     var doctrine_raw = $('#data').val().trim(); //json_map_data;
-    console.log(doctrine_raw);
+    //console.log(doctrine_raw);
     if (doctrine_raw == "")
     {
         return;
     }
     data = doctrine_raw.split('#');
 
+    if (data.length > 1024) {
+        console.log("Too many items! Should be 1024. Instead got:" + data.length);
+    }
 
     var total_price = 0;
 
     var tile = "";
     var x = 0;
     var y = 0;
+    var exterior_wall = 998;
     for(var n = 0; n < data.length; n++)
     {
         // find : 
         // go down one line every x amount
-        if (data[n] == "\n") 
+        if (x > 29) 
         {
             y++;
             x=0;
             continue;
         }
-        tile = getKey(template_data.template, data[n]);
+
+
+        // strip out any : states
+
+
+        clean_data = data[n].replace(/:.*/g,"");
+
+        tile = getDoctrineKey(doctrine_template, clean_data);
+        if (clean_data == exterior_wall) {
+            //skip exterior walls
+            continue;
+        }
+
+        // check if fits
+        if (y > 29)
+        {
+            console.log(tile+' does not fit on the map!')
+        }
+
+        if (data[n] != 0) {
+            console.log(data[n]+ " " + tile + " x" + x + " y" + y);
+        }
         if (tile == "no-change")
         {
             x++;
@@ -368,9 +401,23 @@ function generateMapFromDoctrine()
 }
 
 
+function getDoctrineKey(collection, value)
+{   
+    //console.log("collect:"+collection + "value:" + value);
+    var key = "empty-floor";
+    $.each(collection, function(k, v) {
+        if (v == value) 
+        {
+            key = k;
+        }
+    });
+    return key;
+
+}
 
 function getKey(collection, value)
 {   
+    console.log("collect:"+collection + "value:" + value);
     var key = "empty-floor";
     $.each(collection, function(k, v) {
         if (v.trim() == value) 
