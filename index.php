@@ -183,9 +183,9 @@ Send ajax of code > database > generate unique id > send back to client
     <div class="well" id="data-div">
     <h1>Code</h1>
     <select id="code_selection">
-    <option value="json">JSON</option>
-    <option value="custom">Custom</option>
     <option value="doctrine">Castle Doctrine Format</option>
+    <option value="custom">Custom</option>
+    <option value="json">JSON</option>
     </select>
     <p class="alert alert-info">Any changes you make to the map will update the code instantly.</p>
     <div class="row">

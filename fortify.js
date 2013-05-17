@@ -616,3 +616,5 @@ $('#data_template').change(function() {
     $('#wire_view_js').prop('checked', false);
     generateCode();
 });
+
+generateCode();
