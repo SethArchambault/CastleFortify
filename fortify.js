@@ -211,9 +211,16 @@ function generateDoctrine()
     }
     doctrine += "998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998";
 
-    if (total_price > 0)
+    if (build_view == "normal")
     {
-        $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        if (total_price > 0)
+        {
+            $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        }
+        else
+        {
+            $('#total_price_js').html("");
+        }
     }
     $('#data').val(doctrine);
 }
@@ -240,10 +247,16 @@ function generateJson()
     }
     json = json.slice(0, -2);
     json += '\n] }\n';
-
-    if (total_price > 0)
+    if (build_view == "normal")
     {
-        $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        if (total_price > 0)
+        {
+            $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        }
+        else
+        {
+            $('#total_price_js').html("");
+        }
     }
     json_map_data = json;
     $('#data').val(json);
@@ -274,10 +287,16 @@ function generateCustom()
         }
         custom_language += "\n";
     }
-
-    if (total_price > 0)
+    if (build_view == "normal")
     {
-        $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        if (total_price > 0)
+        {
+            $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        }
+        else
+        {
+            $('#total_price_js').html("");
+        }
     }
     // console.log('custom' + custom_language);
 
@@ -338,9 +357,16 @@ function generateMapFromJson()
         $('#x'+x+'y'+y).attr('data-current-tile', tile);
         total_price += getPrice(tile);
     }
-    if (build_view == "normal" && total_price > 0)
+    if (build_view == "normal")
     {
-        $('#total_price_js').html("<strong>Value</strong> $"+total_price);    
+        if (total_price > 0)
+        {
+            $('#total_price_js').html("<strong>Value</strong> $"+total_price);
+        }
+        else
+        {
+            $('#total_price_js').html("");
+        }
     }
 }
 
