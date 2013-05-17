@@ -25,6 +25,12 @@ Thanks for checking Castle Fortify out, and let me know if you have any ideas on
 
 Thanks for all your feedback!
 
+
+
+# Contributing
+
+Right now the codebase is a bit cluttered, if you can figure out how things work, feel free to contribute a pull request to the DEV branch. I will have a cleaner version of the code for v1.
+
 # Versioning
 
   <major>.<minor>.<patch>
