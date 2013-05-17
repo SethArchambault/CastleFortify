@@ -27,7 +27,7 @@ if (isset($_POST['code']))
     {
         $unique_id = $results[0]['unique_id'];
         die(json_encode(array('status' => 'success', 'message' => 
-            'Saved! Share this link:', 'link' => "http://castlefortify.com/?id=$unique_id")));
+            'Saved! Share this link:', 'link' => "http://".$_SERVER['SERVER_NAME']."/?id=$unique_id")));
     }
 
 
