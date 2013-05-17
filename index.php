@@ -73,6 +73,13 @@ Send ajax of code > database > generate unique id > send back to client
         .chiwawa {background:url(images/panel2.png) -337px -292px;}
         .cat {background:url(images/panel2.png) -433px -292px;}
         .daughter {background:url(images/daughter.png);}
+        .daughter2 {background:url(images/daughter.png);}
+        .daughter3 {background:url(images/daughter.png);}
+        .daughter4 {background:url(images/daughter.png);}
+        .son {background:url(images/daughter.png);}
+        .son2 {background:url(images/daughter.png);}
+        .son3 {background:url(images/daughter.png);}
+        .son4 {background:url(images/daughter.png);}
         .vault {background:url(images/vault.png);}
         .wife {background:url(images/wife.png);}
 

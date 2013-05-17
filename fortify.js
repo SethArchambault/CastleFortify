@@ -35,8 +35,18 @@ var doctrine_template = {
     "cat" : 72,
     "chiwawa" : 71,
     "daughter" : 1040,
+    "daughter2" : 1041,
+    "daughter3" : 1042,
+    "daughter4" : 1043,
+    "son" : 1020,
+    "son2" : 1021,
+    "son3" : 1022,
+    "son4" : 1023,
     "vault" : 999,
-    "wife" : 1010
+    "wife" : 1010,
+    "wife1" : 1011,
+    "wife2" : 1012,
+    "wife3" : 1013
 };
 
   
@@ -177,7 +187,7 @@ function generateDoctrine()
     var total_price = 0;
     // exterior walls
     doctrine = "998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#";
-    for (var y = 0; y < rows; y++) 
+    for (var y = 29; y >= 0; y--) 
     {
         for (var x = 0; x < columns; x++) 
         {
@@ -189,7 +199,15 @@ function generateDoctrine()
             }
             total_price += getPrice(tile);
         }
-        doctrine += "998#998#";
+        // add in entrance
+        if(y==15)
+        {
+            doctrine += "998#0#";             
+        }
+        else
+        {
+            doctrine += "998#998#";            
+        }
     }
     doctrine += "998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998#998";
 
@@ -345,7 +363,7 @@ function generateMapFromDoctrine()
 
     var tile = "";
     var x = 0;
-    var y = 0;
+    var y = 29;
     var exterior_wall = 998;
     for(var n = 0; n < data.length; n++)
     {
@@ -353,10 +371,13 @@ function generateMapFromDoctrine()
         // go down one line every x amount
         if (x > 29) 
         {
-            y++;
+            y--;
             x=0;
             continue;
         }
+
+        // bypass entrance tile
+
 
 
         // strip out any : states
@@ -365,19 +386,31 @@ function generateMapFromDoctrine()
         clean_data = data[n].replace(/:.*/g,"");
 
         tile = getDoctrineKey(doctrine_template, clean_data);
+        
+        // ignore entrance. It throws off my vibe.
+
+
+
         if (clean_data == exterior_wall) {
             //skip exterior walls
             continue;
         }
+        
+        if (n == 512)
+        {
+            console.log('skip entrance ' + tile + ' at x:' + x + 'y: ' + y);
+            continue;
+        }
+
 
         // check if fits
-        if (y > 29)
+        if (y < 0)
         {
             console.log(tile+' does not fit on the map!')
         }
 
         if (data[n] != 0) {
-            console.log(data[n]+ " " + tile + " x" + x + " y" + y);
+            console.log(data[n]+ " " + tile + " x" + x + " y" + y + "n" + n);
         }
         if (tile == "no-change")
         {
