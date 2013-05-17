@@ -250,7 +250,7 @@ Send ajax of code > database > generate unique id > send back to client
 
 <script src="/lib/jquery/jquery.min.js"></script>
 <script src="/lib/bootstrap/js/bootstrap.js"></script>
-<script src="/fortify.js"></script>
+<script src="/fortify.js?v=1"></script>
 
 </body>
 </html>
