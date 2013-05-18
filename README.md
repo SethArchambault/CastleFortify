@@ -34,7 +34,7 @@ Thanks for all your feedback!
 >   Good for typos, quick fixes 
 
 1. Switch to the "Develop" branch
-2. Click the file that need's the edit
+2. Click the file that needs the edit
 3. Click "Edit"
 4. Make your change, Update the commit summary, click Commit changes!
 
