@@ -51,7 +51,10 @@ Thanks for all your feedback!
 
     git checkout -b <new-feature-branch>
 
-4. Push the branch up to your fork ( git push origin <topic-branch-name> ).
+4. Push the branch up to your fork 
+
+    git push origin <new-feature-branch>
+    
 5. Submit a Pull Request with a clear title and description.
     
 
