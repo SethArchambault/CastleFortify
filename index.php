@@ -88,7 +88,14 @@ Send ajax of code > database > generate unique id > send back to client
         .tile {width:28px; height:28px;float:left;padding-right:3px;}
         #home {width:860px;}
         .square {width:28px; height:28px; float:left;}
-        .square:hover {background:#333;}
+        .square:hover:after {
+            background: #333;     
+            opacity: 0.7;      
+            content: "";
+            display: block;
+            height: 28px;
+            width: 28px;
+        } /* @Matrix - Thanks for the code!*/
         .clear {clear:both;}
 
         body {padding: 0 0 50px 0;}
