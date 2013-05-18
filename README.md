@@ -38,27 +38,12 @@ Thanks for all your feedback!
 3. Click "Edit"
 4. Make your change, Update the commit summary, click Commit changes!
 
->   Thank's so much! 
-
-## The Pro Way
-
-1. Fork the project from the "Develop" branch.
-2. Clone your fork 
-
-    git clone git@github.com:<your-username>/CastleFortify.git
-
-3. Create a new branch to contain your feature or fix 
-
-    git checkout -b <new-feature-branch>
-
-4. Push the branch up to your fork 
-
-    git push origin <new-feature-branch>
-
-5. Submit a Pull Request with a clear title and description.
-    
-
+>   Thanks so much! 
 >   Right now the codebase is a bit cluttered, but I will have a cleaner version of the code for v1.
+
+[The Pro Way](https://github.com/SethArchambault/CastleFortify/wiki/Contributing)
+
+
 
 
 
