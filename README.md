@@ -49,4 +49,4 @@ Thanks for all your feedback!
 
 # Versioning
 
-  <major>.<minor>.<patch>
+major.minor.patch
