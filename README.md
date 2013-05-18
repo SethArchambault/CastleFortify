@@ -29,7 +29,7 @@ Thanks for all your feedback!
 
 # You Can Contribute!
 
-## The Quick Way
+**The Quick Way**
 
 >   Good for typos, quick fixes 
 
@@ -41,10 +41,7 @@ Thanks for all your feedback!
 >   Thanks so much! 
 >   Right now the codebase is a bit cluttered, but I will have a cleaner version of the code for v1.
 
-[The Pro Way](https://github.com/SethArchambault/CastleFortify/wiki/Contributing)
-
-
-
+[Or Try The Pro Way](https://github.com/SethArchambault/CastleFortify/wiki/Contributing)
 
 
 # Versioning
