@@ -44,9 +44,13 @@ Thanks for all your feedback!
 
 1. Fork the project.
 2. Clone your fork 
+
     git clone git@github.com:<your-username>/CastleFortify.git
+
 3. Create a new branch to contain your feature or fix 
+
     git checkout -b <new-feature-branch>
+
 4. Push the branch up to your fork ( git push origin <topic-branch-name> ).
 5. Submit a Pull Request with a clear title and description.
     
