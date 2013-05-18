@@ -58,7 +58,7 @@ Thanks for all your feedback!
 5. Submit a Pull Request with a clear title and description.
     
 
->   Right now the codebase is a bit cluttered, if you can figure out how things work, feel free to contribute a pull request to the DEV branch. I will have a cleaner version of the code for v1.
+>   Right now the codebase is a bit cluttered, but I will have a cleaner version of the code for v1.
 
 
 
