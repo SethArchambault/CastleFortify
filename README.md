@@ -27,9 +27,33 @@ Thanks for all your feedback!
 
 
 
-# Contributing
+# You Can Contribute!
 
-Right now the codebase is a bit cluttered, if you can figure out how things work, feel free to contribute a pull request to the DEV branch. I will have a cleaner version of the code for v1.
+## The Quick Way
+
+>   Good for typos, quick fixes 
+
+1. Switch to the "Develop" branch
+2. Click the file that need's the edit
+3. Click "Edit"
+4. Make your change, Update the commit summary, click Commit changes!
+
+>   Thank's so much! 
+
+## The Pro Way
+
+1. Fork the project.
+2. Clone your fork 
+    git clone git@github.com:<your-username>/CastleFortify.git
+3. Create a new branch to contain your feature or fix 
+    git checkout -b <new-feature-branch>
+4. Push the branch up to your fork ( git push origin <topic-branch-name> ).
+5. Submit a Pull Request with a clear title and description.
+    
+
+>   Right now the codebase is a bit cluttered, if you can figure out how things work, feel free to contribute a pull request to the DEV branch. I will have a cleaner version of the code for v1.
+
+
 
 # Versioning
 
