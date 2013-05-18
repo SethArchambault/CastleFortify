@@ -42,7 +42,7 @@ Thanks for all your feedback!
 
 ## The Pro Way
 
-1. Fork the project.
+1. Fork the project from the "Develop" branch.
 2. Clone your fork 
 
     git clone git@github.com:<your-username>/CastleFortify.git
@@ -54,7 +54,7 @@ Thanks for all your feedback!
 4. Push the branch up to your fork 
 
     git push origin <new-feature-branch>
-    
+
 5. Submit a Pull Request with a clear title and description.
     
 
