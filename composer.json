@@ -1,0 +1,6 @@
+{
+    "require" : {
+        "slim/slim" : "2.2.*",
+        "gabordemooij/redbean": "v3.4.4"
+    }
+}
