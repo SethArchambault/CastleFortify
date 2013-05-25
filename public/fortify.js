@@ -23,6 +23,8 @@ var doctrine_template = {
     "sticking-pressure-switch" : 100,
     "pressure-toggle-switch-off" : 101,
     "wire" : 102,
+    "wire-horizontal" : 121,
+    "wire-vertical" : 120,
     "power" : 103,
     "voltage-triggered-switch" : 104,
     "voltage-triggered-inverted-switch" : 105,
@@ -30,6 +32,7 @@ var doctrine_template = {
     "rotary-toggle-switch" : 107,
     "pressure-toggle-switch-on" : 108,
     "electric-floor" : 110,
+    "indicator-light" : 109,
     "pit" : 111,
     "trap-door" : 112,
     "cat" : 72,
@@ -118,6 +121,10 @@ function getPrice(tile)
         return 200;
         case "wire":
         return 5;
+        case "wire-horizontal":
+        return 5;
+        case "wire-vertical":
+        return 5;
         case "wired-wooden-wall":
         return 20;
         case "pressure-toggle-switch-off":
@@ -138,6 +145,8 @@ function getPrice(tile)
         return 100;
         case "electric-floor":
         return 50;
+        case "indicator-light":
+        return 10;
         case "trap-door":
         return 200;
         case "pitbull":
@@ -436,7 +445,7 @@ function generateMapFromDoctrine()
         }
 
         if (data[n] != 0) {
-            console.log(data[n]+ " " + tile + " x" + x + " y" + y + "n" + n);
+            // console.log(data[n]+ " " + tile + " x" + x + " y" + y + "n" + n);
         }
         if (tile == "no-change")
         {
