@@ -88,7 +88,7 @@
     <? endif; ?>
 
     <h1>Build</h1>
-    <div id="tiles" class="well" style="padding:4px;">
+    <div id="tiles" class="well" style="padding:4px;width:900px;">
         <div class="tile empty-floor" data-current-tile="empty-floor"></div>
         <div class="tile wooden-wall" data-current-tile="wooden-wall"></div>
         <div class="tile steel-wall" data-current-tile="steel-wall"></div>
@@ -116,8 +116,8 @@
         <div class="tile chiwawa" data-current-tile="chiwawa"></div>
         <div class="tile cat" data-current-tile="cat"></div>
         <div class="tile daughter" data-current-tile="daughter"></div>
-        <div class="tile vault" data-current-tile="vault"></div>
         <div class="tile wife" data-current-tile="wife"></div>
+        <div class="tile vault" data-current-tile="vault"></div>
         <div class="clearfix"></div>
     </div> <!-- tiles -->
     <div id="home">

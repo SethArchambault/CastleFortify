@@ -59,11 +59,11 @@ $app->get('/:controller/', function ($action) use ($app) {
 
 /************************************* GET /c/e2be188 ****************************************/
 /************************************* GET /castles/e2be188 ****************************************/
-$app->get('/:controller/(:id)', function ($controller, $id) use ($app) {  
+$app->get('/:controller/(:unique_id)', function ($controller, $unique_id) use ($app) {  
     $code = '{ "map" : [
     ] }';
 
-    $map = R::findOne('maps',' unique_id = ? ', [$id]);
+    $map = R::findOne('maps',' unique_id = ?', [$unique_id]);
     $message = "";
     $status = "";
     if ($map !== null)
@@ -97,8 +97,7 @@ $app->post('/castles/', function() use ($app) {
 
     // check to see if code already exists
 
-    $result = R::findOne("maps", "code = '?'", [$code]);
-
+    $result = R::findOne("maps", "code = ?", [$code]);
     if ($result !== null)
     {
         $unique_id = $result->unique_id;
@@ -110,7 +109,7 @@ $app->post('/castles/', function() use ($app) {
     do
     {
         $unique_id = substr(md5(time()), -7);
-        $result = R::findOne("maps", "unique_id = '?'", [$unique_id]);
+        $result = R::findOne("maps", "unique_id = ?", [$unique_id]);
     } while ($result !== null);
 
     // alright we've got the unique id, lets add the code and send back the message
