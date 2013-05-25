@@ -14,6 +14,8 @@
         .pit {background:url(/images/panel1.png) -433px -187px;}
         .power {background:url(/images/panel1.png) -530px -187px;}
         .wire {background:url(/images/panel1.png) -242px -300px;}
+        .wire-horizontal {background:url(/images/panel1_v6.png) -433px -300px;}
+        .wire-vertical {background:url(/images/panel1_v6.png) -337px -300px;}
         .wired-wooden-wall {background:url(/images/panel1.png) -337px -285px;}
         .pressure-toggle-switch-off {background:url(/images/panel1.png) -433px -300px;}
         .pressure-toggle-switch-on {background:url(/images/panel1.png) -530px -300px;}
@@ -24,6 +26,7 @@
         .voltage-triggered-inverted-switch {background:url(/images/panel2.png) -242px -187px;}
         .powered-door {background:url(/images/panel2.png) -337px -187px;}
         .electric-floor {background:url(/images/panel2.png) -433px -187px;}
+        .indicator-light {background:url(/images/panel2_v6.png) -242px -187px;}
         .trap-door {background:url(/images/panel2.png) -530px -187px;}
         .pitbull {background:url(/images/panel2.png) -242px -292px;}
         .chiwawa {background:url(/images/panel2.png) -337px -292px;}
@@ -74,7 +77,7 @@
 </div>
 
 <div class="container">
-<div class="span11">
+<div class="span12">
 
 <!-- Space for all the tiles -->
 
@@ -95,6 +98,8 @@
         <div class="tile pit" data-current-tile="pit"></div>
         <div class="tile power" data-current-tile="power"></div>
         <div class="tile wire" data-current-tile="wire"></div>
+        <div class="tile wire-horizontal" data-current-tile="wire-horizontal"></div>
+        <div class="tile wire-vertical" data-current-tile="wire-vertical"></div>
         <div class="tile wired-wooden-wall" data-current-tile="wired-wooden-wall"></div>
         <div class="tile pressure-toggle-switch-off" data-current-tile="pressure-toggle-switch-off"></div>
         <div class="tile pressure-toggle-switch-on" data-current-tile="pressure-toggle-switch-on"></div>
@@ -105,6 +110,7 @@
         <div class="tile voltage-triggered-inverted-switch" data-current-tile="voltage-triggered-inverted-switch"></div>
         <div class="tile powered-door" data-current-tile="powered-door"></div>
         <div class="tile electric-floor" data-current-tile="electric-floor"></div>
+        <div class="tile indicator-light" data-current-tile="indicator-light"></div>
         <div class="tile trap-door" data-current-tile="trap-door"></div>
         <div class="tile pitbull" data-current-tile="pitbull"></div>
         <div class="tile chiwawa" data-current-tile="chiwawa"></div>
@@ -159,6 +165,7 @@
     </textarea><br>
     </div> <!-- span5 -->
     <div class="span4">
+        <!-- default custom template -->
         <textarea id="data_template" rows="10" class="span4" style="display:none;">
 { "template" : {
     "empty-floor" : ".",
@@ -170,16 +177,19 @@
     "pit" : "P",
     "power" : "Z",
     "wire" : "~",
+    "wire-horizontal" : "_",
+    "wire-vertical" : "|",
     "wired-wooden-wall" : "-",
     "pressure-toggle-switch-off" : "0",
     "pressure-toggle-switch-on" : "1",
     "sticking-pressure-switch" : "S",
-    "rotary-toggle-switch" : "|",
+    "rotary-toggle-switch" : "{",
     "wire-bridge" : "+",
     "voltage-triggered-switch" : "&",
     "voltage-triggered-inverted-switch" : "%",
     "powered-door" : "D",
     "electric-floor" : "#",
+    "indicator-light" : "*",
     "trap-door" : "T",
     "pitbull" : "B",
     "chiwawa" : "b",
