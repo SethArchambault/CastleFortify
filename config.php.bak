@@ -1,0 +1,9 @@
+<?php
+
+$config['host'] = "";
+$config['db'] = "";
+$config['user'] = "";
+$config['password'] = "";
+
+error_reporting(E_ALL ^ E_STRICT & E_NOTICE);
+

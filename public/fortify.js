@@ -579,7 +579,7 @@ $('#save').click(function(e) {
 
     $('#save_and_share_js').modal();
     $('#save-result').html("Saving...");
-    $.post('/save_map.php', 
+    $.post('/castles/', 
         {
             "code" : $('#data').val().trim() 
         }, 
@@ -593,7 +593,11 @@ $('#save').click(function(e) {
                 $('#save-result').text("<div class='alert alert-error'>"+data.message+"</div>");
                 // $('#save-result').attr('class', 'alert alert-error');
             }    
-        }, 'json');
+        }, 'json')
+        .fail(function() {
+            $('#save-result').html("<div class='alert alert-error'>Scary error! Please tell Seth.</div>");
+
+        });
 });
 $('#wire_view_js').click(function(e) {
 

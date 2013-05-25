@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+#RewriteCond %{QUERY_STRING} id=d09a7ea
+#RewriteRule ^$ http://google.com/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule /castles/([a-z0-9]+) /?id=$1
