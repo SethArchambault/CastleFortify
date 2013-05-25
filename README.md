@@ -1,4 +1,4 @@
-CastleFortify
+CastleFortify V
 =============
 
 Save and Share your Castle Doctrine designs. Also, designs are saved in simple JSON code, so they can be used in any of your own apps. 
@@ -14,6 +14,7 @@ Thanks for checking Castle Fortify out, and let me know if you have any ideas on
 
 1. Edit config.php with proper database connection info
 2. Import sql into database (/sql/castle_fortify.sql)
+3. Run composer.phar install ([Download Composer Here](http://getcomposer.org))
 
 # Roadmap for Future Versions
 
