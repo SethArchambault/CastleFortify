@@ -134,7 +134,7 @@ $(".square")
 })
 .mouseup(function() {
     if (!isDragging) { //it's a click
-        $("#throbble").show();
+        // $("#throbble").show();
         onClick($(this));
     }
 });
