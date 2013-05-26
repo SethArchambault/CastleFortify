@@ -77,57 +77,75 @@ $('.tile').click(function() {
     current_tile_name = $(this).attr('data-current-tile');
 });
 
+// Fixes a Chrome drag issue
+$(".square").bind("selectstart", function(event) {
+    event.preventDefault();
+    return false;
+});
 
 // Click on square = change the tile to current tile
 // If already current tile, change to floor
+function onClick($element)
+{
+    if ($element.attr('data-current-tile') == current_tile_name)
+    {
+        $element.attr('class', 'square '+floor_tile_name);
+        $element.attr('data-current-tile', floor_tile_name);
+    }
+    else
+    {
+        $element.attr('class', 'square '+current_tile_name)
+        $element.attr('data-current-tile', current_tile_name);
+    }
+    if (build_view == "normal")
+    {
+        generateCode();
+    }
+}
+
+function onDrag($element)
+{
+    $element.attr('class', 'square '+current_tile_name)
+    $element.attr('data-current-tile', current_tile_name);
+    if (build_view == "normal")
+    {
+        generateCode();
+    }
+}
 
 var isDragging = false;
 $(".square")
 .mousedown(function() {
+    _this = this;
+    
     $(window).mousemove(function() {
-        isDragging = true;
         $(window).unbind("mousemove");
+        isDragging = true;
+        
+        onDrag($(_this));
+    });
+    
+    $(window).mouseup(function() {
+        $(window).unbind("mouseup");
+        $(window).unbind("mousemove");
+        
+        isDragging = false;
     });
 })
 .mouseup(function() {
-    var wasDragging = isDragging;
-    isDragging = false;
-    $(window).unbind("mousemove");
-    if (!wasDragging) { //was clicking
+    if (!isDragging) { //it's a click
         $("#throbble").show();
+        onClick($(this));
     }
 });
 
 $('.square').mouseenter(function() {
     if (isDragging)
     {
-
-        $(this).attr('class', 'square '+current_tile_name)
-        $(this).attr('data-current-tile', current_tile_name);
-        if (build_view == "normal")
-        {
-            generateCode();    
-        }
+        onDrag($(this));
     }
 });
 
-$('.square').click(function() {
-
-    if ($(this).attr('data-current-tile') == current_tile_name)
-    {
-        $(this).attr('class', 'square '+floor_tile_name);
-        $(this).attr('data-current-tile', floor_tile_name);
-    }
-    else
-    {
-        $(this).attr('class', 'square '+current_tile_name)
-        $(this).attr('data-current-tile', current_tile_name);
-    }
-    if (build_view == "normal")
-    {
-        generateCode();    
-    }
-});
 // Calculate Price from Tile
 
 function getPrice(tile)
