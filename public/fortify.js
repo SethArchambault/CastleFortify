@@ -77,6 +77,11 @@ $('.tile').click(function() {
     current_tile_name = $(this).attr('data-current-tile');
 });
 
+// Fixes a Chrome drag issue
+$(".square").bind("selectstart", function(event) {
+    event.preventDefault();
+    return false;
+});
 
 // Click on square = change the tile to current tile
 // If already current tile, change to floor
