@@ -225,7 +225,7 @@
 
 <script src="/lib/jquery/jquery.min.js"></script>
 <script src="/lib/bootstrap/js/bootstrap.js"></script>
-<script src="/fortify.js?v=1"></script>
+<script src="/fortify.js?v=2"></script>
 
 </body>
 </html>
