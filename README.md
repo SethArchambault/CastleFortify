@@ -9,7 +9,7 @@ Here's a map I often use:
 http://castlefortify.com/c/1eb1be1
 
 Thanks for checking Castle Fortify out, and let me know if you have any ideas on how to make it better!
-
+d
 # Install
 
 1. Edit config.php with proper database connection info
@@ -42,7 +42,25 @@ Thanks for all your feedback!
 
 [Or Try The Pro Way](https://github.com/SethArchambault/CastleFortify/wiki/Contributing)
 
+# Thanks!
 
-# Versioning
+Really appreciate all the support - if you've suggested a feature, found a bug, or even just created 
+and shared a map, you are a part of building this to be a great tool for the Castle Doctrine community. Thank you!
+But sometimes thanks isn't enough.  Here are some awards.
+
+# Awards
+
+To @codetrix for squashing bugs faster than I can boot up my computer
+
+for this you are awarded: ^ The hat of good job
+
+To @mjbarker for constant vigilence in uncovering issues and pointing out missing features  
+
+for this you are awarded: * The all seeing asterisk
+
+Enjoy :)
+
+# Boring Versioning Stuff
 
 major.minor.patch
+
