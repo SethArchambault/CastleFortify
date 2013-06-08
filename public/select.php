@@ -69,7 +69,7 @@
         <a class="brand" href="/">Castle Fortify</a>
         <ul class="nav nav-tabs" id="myTab">
           <li class="active"><a href="#draw-panel" data-toggle="tab">Build</a></li>
-          <li><a href="#code-panel" data-toggle="tab">Code</a></li>
+          <li><a id="code_panel_anchor_js" href="#code-panel" data-toggle="tab">Code</a></li>
         </ul>
     </div> <!-- span12 -->
     </div>
@@ -223,9 +223,7 @@
   </div>
 </div>
 
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/bootstrap/js/bootstrap.js"></script>
-<script src="/fortify.js?v=2"></script>
+<script data-main="/app.js?v=1" src="/lib/require/require.js"></script>
 
 </body>
 </html>

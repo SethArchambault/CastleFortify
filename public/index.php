@@ -76,7 +76,6 @@ $app->get('/:controller/(:unique_id)', function ($controller, $unique_id) use ($
         $status = "fail";
         $message = "Sorry, I couldn't find that map!";
     }
-
     // include "select.php";
     $app->render("select.php", ['code' => $code, 'status' => $status,'message' => $message]);
 })->conditions(array(':controller'));
