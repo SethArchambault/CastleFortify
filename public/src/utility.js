@@ -123,7 +123,7 @@ define(['jquery', 'src/doctrinedata'], function($, DoctrineData) {
 
             clean_data = data[n].replace(/:.*/g,"");
 
-            tile = DoctrineData.getKey(clean_data);
+            tile = DoctrineData.getCodeKey(clean_data);
             
             // ignore entrance. It throws off my vibe.
 
@@ -160,7 +160,6 @@ define(['jquery', 'src/doctrinedata'], function($, DoctrineData) {
 
     function getKey(collection, value)
     {   
-        console.log("collect:"+collection + "value:" + value);
         var key = "empty-floor";
         $.each(collection, function(k, v) {
             if (v.trim() == value) 
