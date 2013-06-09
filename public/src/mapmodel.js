@@ -45,6 +45,8 @@ define(['jquery', 'pubsub'], function($, PubSub) {
 
     var setTile = function(x, y, tile_name)
     {
+        if (!map[y] || !map[y][x]) return;
+
         PubSub.publish('map_model:set_tile_start', {x:x, y:y, tile_name:map[y][x].tile_name});
         map[y][x].tile_name = tile_name;
         PubSub.publish('map_model:set_tile_end', {x:x, y:y, tile_name:tile_name});
