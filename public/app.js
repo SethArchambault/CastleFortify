@@ -7,17 +7,16 @@
 
 require.config({
     paths : {
-        "jquery"    : "lib/jquery/jquery.min",
+        "jquery"    : "lib/jquery/jquery",
         "pubsub"    : "lib/pubsub/pubsub",
         "bootstrap" : "lib/bootstrap/js/bootstrap.min"
     },
     shim: {
         "bootstrap": {
-          deps: ["jquery"],
-          exports: "$.fn.popover"
+            deps : ["jquery"],
+            exports : 'Bootstrap'
         }
-    },
-    enforceDefine: true
+    }
 });
 
 define(['jquery', 'pubsub', 'src/doctrinedata', 'src/mapmodel', 'src/utility', 'bootstrap'], 
@@ -159,8 +158,7 @@ PubSub.subscribe('map_model:build_end', function(msg) {
         }
     });
 
-    generateMap();
-    generateCode();
+    map_model.loadJson($('#data').val());
 
 });
 
@@ -203,7 +201,8 @@ function onDrag($element)
 var isDragging = false;
 
 // Generate Code from Map
-
+// when template is changed
+// or code tab is clicked
 function generateCode()
 {
     switch($('#code_selection').val())
@@ -229,6 +228,7 @@ function generateCode()
             return;
     }
 }
+
 
 
 // refresh code panel with the latest code
@@ -260,13 +260,10 @@ function wireView(tile)
     }
 }
 
+$('#load-code').click(function(e) {
+    e.preventDefault();
 
-
-// generate map from code
-
-function generateMap()
-{
-
+    // generate the map
     switch($('#code_selection').val())
     {
         case 'json':
@@ -286,23 +283,15 @@ function generateMap()
         default:
             map_model.loadJson($('#data').val());
             return;
-    }
+    }    
 
-}
-
-$('#load-code').click(function(e) {
-    e.preventDefault();
-    build_view = "normal";
-    $('#wire_view_js').prop('checked', false);
-    generateMap();
-    generateCode();    
+    // reload code, so you can see if there are any
+    // changes instantly
+    generateCode(); 
 });
 
 $('#save').click(function(e) {
     e.preventDefault();
-
-    generateMap();
-    generateCode();    
 
     $('#save_and_share_js').modal();
     $('#save-result').html("Saving...");
@@ -362,8 +351,6 @@ $('#code_selection').change(function() {
 });
 
 $('#data_template').change(function() {
-    build_view = "normal";
-    $('#wire_view_js').prop('checked', false);
     generateCode();
 });
 

@@ -89,10 +89,9 @@ define([], function() {
 
     function getKey(collection, value)
     {   
-        console.log("collect:"+collection + "value:" + value);
         var key = "empty-floor";
         $.each(collection, function(k, v) {
-            if (v.trim() == value) 
+            if (v == value) 
             {
                 key = k;
             }
