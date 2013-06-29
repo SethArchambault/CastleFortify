@@ -223,7 +223,9 @@
   </div>
 </div>
 
-<script data-main="/built/app.js" src="/lib/require/require.js"></script>
+<!-- to build you must run: r.js -o build.js -->
+<!-- or if your testing just change data-main to /app.js -->
+<script data-main="/build/app.js" src="/lib/require/require.js"></script>
 
 </body>
 </html>
