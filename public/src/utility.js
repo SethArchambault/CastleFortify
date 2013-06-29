@@ -63,7 +63,7 @@ define(['jquery', 'src/doctrinedata'], function($, DoctrineData) {
         var rules = jsonToObject(rules_json);
         // console.log('custom generate');
 
-        var tile = "";
+        var tile_name = "";
         var x = 0;
         var y = 0;
         var json = '{ "map" : [ \n';        
@@ -103,7 +103,7 @@ define(['jquery', 'src/doctrinedata'], function($, DoctrineData) {
             console.log("Too many items! Should be 1024. Instead got:" + data.length);
         }
 
-        var tile = "";
+        var tile_name = "";
         var x = 0;
         var y = 29;
         var exterior_wall = 998;
@@ -123,7 +123,7 @@ define(['jquery', 'src/doctrinedata'], function($, DoctrineData) {
 
             clean_data = data[n].replace(/:.*/g,"");
 
-            tile = DoctrineData.getCodeKey(clean_data);
+            tile_name = DoctrineData.getCodeKey(clean_data);
             
             // ignore entrance. It throws off my vibe.
 
@@ -134,17 +134,17 @@ define(['jquery', 'src/doctrinedata'], function($, DoctrineData) {
             
             if (n == 512)
             {
-                console.log('skip entrance ' + tile + ' at x:' + x + 'y: ' + y);
+//                console.log('skip entrance ' + tile_name + ' at x:' + x + 'y: ' + y);
                 continue;
             }
 
             // check if fits
             if (y < 0)
             {
-                console.log(tile+' does not fit on the map!')
+                console.log(tile_name+' does not fit on the map!')
             }
 
-            if (tile == "no-change")
+            if (tile_name == "no-change")
             {
                 x++;
                 continue;

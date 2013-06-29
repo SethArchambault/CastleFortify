@@ -41,6 +41,8 @@
         .son4 {background:url(/images/daughter.png);}
         .vault {background:url(/images/vault.png);}
         .wife {background:url(/images/wife.png);}
+        .wife2 {background:url(/images/wife.png);}
+        .wife3 {background:url(/images/wife.png);}
 
         #entrance {position:absolute; margin-left:-30px; padding:4px 0 0 10px; font-weight:bold; border:1px solid #999; width:18px; height:24px; background:#ffff55;}
 
@@ -68,8 +70,8 @@
         <div class="span11">
         <a class="brand" href="/">Castle Fortify</a>
         <ul class="nav nav-tabs" id="myTab">
-          <li class="active"><a href="#draw-panel" data-toggle="tab">Build</a></li>
-          <li><a id="code_panel_anchor_js" href="#code-panel" data-toggle="tab">Code</a></li>
+          <li class="active"><a href="#draw-panel" data-toggle="tab">Map</a></li>
+          <li><a id="code_panel_anchor_js" href="#code-panel" data-toggle="tab">Import</a></li>
         </ul>
     </div> <!-- span12 -->
     </div>
@@ -87,7 +89,7 @@
         <div class="alert alert-error"><?= $message ?></div>
     <? endif; ?>
 
-    <h1>Build</h1>
+    <h1>Map</h1>
     <div id="tiles" class="well" style="padding:4px;width:900px;">
         <div class="tile empty-floor" data-current-tile="empty-floor"></div>
         <div class="tile wooden-wall" data-current-tile="wooden-wall"></div>
@@ -152,13 +154,13 @@
 
   <div class="tab-pane" id="code-panel">
     <div class="well" id="data-div">
-    <h1>Code</h1>
+    <h1>Import</h1>
     <select id="code_selection">
-    <option value="json">JSON</option>
     <option value="doctrine">Castle Doctrine Format</option>
+    <option value="json">JSON</option>
     <option value="custom">Custom</option>
     </select>
-    <p class="alert alert-info">Any changes you make to the map will update the code instantly.</p>
+    <p class="alert alert-info"><a href="https://github.com/SethArchambault/CastleFortify/wiki/Importing-maps-from-Castle-Doctrine" target="_blank">Learn how to import your map</a>.</p>
     <div class="row">
     <div class="span6">
     <textarea id="data" rows="10" class="span6" style="font-family:monospace;"><?= $code ?>
@@ -195,14 +197,24 @@
     "chiwawa" : "b",
     "cat" : "c",
     "daughter" : "f",
+    "daughter2" : "f",
+    "daughter3" : "f",
+    "daughter4" : "f",
+    "son" : "f",
+    "son2" : "f",
+    "son3" : "f",
+    "son4" : "f",
     "wife" : "F",
+    "wife1" : "F",
+    "wife2" : "F",
+    "wife3" : "F",
     "vault" : "$",
     "no-change" : "x"
 }}
         </textarea>
     </div> <!-- span5 -->
     </div> <!-- row -->
-    <a href="" class="btn" id="load-code">Apply Code to Map</a>
+    <a href="" class="btn" id="load-code">Import</a>
     </div> <!-- well -->
   </div> <!-- tab-pane -->
 </div> <!-- tab-content -->
@@ -224,8 +236,13 @@
 </div>
 
 <!-- to build you must run: r.js -o build.js -->
+<!--
+<script type="text/javascript" src="/app.min.js"></script>
+-->
 <!-- or if your testing just change data-main to /app.js -->
-<script data-main="/build/app.js" src="/lib/require/require.js"></script>
+<!-- for development use this line instead: -->
+ 
+<script data-main="/app.js" src="/lib/require/require.js"></script>
 
 </body>
 </html>
