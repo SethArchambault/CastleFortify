@@ -47,7 +47,7 @@ While I've tried to keep things as simple as possible, I decided to try out requ
 
 One unfortunate side effect of this latest change is that if you are making changes to the javascript code, you should uncomment this line in select.php:
 
-  <script data-main="/app.js" src="/lib/require/require.js"></script>
+    <script data-main="/app.js" src="/lib/require/require.js"></script>
   
 and comment out the other script line immediately above it.
 
