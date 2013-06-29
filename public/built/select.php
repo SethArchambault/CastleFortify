@@ -223,7 +223,7 @@
   </div>
 </div>
 
-<script data-main="/app.js" src="/lib/require/require.js"></script>
+<script data-main="/built/app.js" src="/lib/require/require.js"></script>
 
 </body>
 </html>
