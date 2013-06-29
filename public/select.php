@@ -236,13 +236,11 @@
 </div>
 
 <!-- to build you must run: r.js -o build.js -->
-<!--
 <script type="text/javascript" src="/app.min.js"></script>
--->
 <!-- or if your testing just change data-main to /app.js -->
 <!-- for development use this line instead: -->
- 
+<!-- 
 <script data-main="/app.js" src="/lib/require/require.js"></script>
-
+-->
 </body>
 </html>
