@@ -38,7 +38,7 @@ Thanks for all your feedback!
 4. Make your change, Update the commit summary, click Commit changes!
 
 >   Thanks so much! 
->   Right now the codebase is a bit cluttered, but I will have a cleaner version of the code for v1.
+
 
 [Or Try The Pro Way](https://github.com/SethArchambault/CastleFortify/wiki/Contributing)
 

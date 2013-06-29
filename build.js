@@ -1,16 +1,16 @@
+
 ({
-    appDir: "public",
-    baseUrl: ".",
-    dir: "public/build",
+    baseUrl: "public",
+    name : "app",
+    out : "public/app.min.js",
+    mainConfigFile : "public/app.js",
     paths : 
     {
-        "jquery"    : "lib/jquery/jquery.min",
-        "pubsub"    : "lib/pubsub/pubsub",
-        "bootstrap" : "lib/bootstrap/js/bootstrap.min"
+        "requireLib" : "lib/require/require"
     },
-    modules: [
-        {
-            name: "app"
-        }
-    ]
+    insertRequire: ['app'],
+    include : [
+        "requireLib",
+        "app"
+    ],
 })

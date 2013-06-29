@@ -68,8 +68,8 @@
         <div class="span11">
         <a class="brand" href="/">Castle Fortify</a>
         <ul class="nav nav-tabs" id="myTab">
-          <li class="active"><a href="#draw-panel" data-toggle="tab">Build</a></li>
-          <li><a id="code_panel_anchor_js" href="#code-panel" data-toggle="tab">Code</a></li>
+          <li class="active"><a href="#draw-panel" data-toggle="tab">Map</a></li>
+          <li><a id="code_panel_anchor_js" href="#code-panel" data-toggle="tab">Import</a></li>
         </ul>
     </div> <!-- span12 -->
     </div>
@@ -87,7 +87,7 @@
         <div class="alert alert-error"><?= $message ?></div>
     <? endif; ?>
 
-    <h1>Build</h1>
+    <h1>Map</h1>
     <div id="tiles" class="well" style="padding:4px;width:900px;">
         <div class="tile empty-floor" data-current-tile="empty-floor"></div>
         <div class="tile wooden-wall" data-current-tile="wooden-wall"></div>
@@ -152,10 +152,10 @@
 
   <div class="tab-pane" id="code-panel">
     <div class="well" id="data-div">
-    <h1>Code</h1>
+    <h1>Import</h1>
     <select id="code_selection">
-    <option value="json">JSON</option>
     <option value="doctrine">Castle Doctrine Format</option>
+    <option value="json">JSON</option>
     <option value="custom">Custom</option>
     </select>
     <p class="alert alert-info">Any changes you make to the map will update the code instantly.</p>
@@ -224,8 +224,11 @@
 </div>
 
 <!-- to build you must run: r.js -o build.js -->
+<script type="text/javascript" src="/app.min.js"></script>
 <!-- or if your testing just change data-main to /app.js -->
-<script data-main="/build/app.js" src="/lib/require/require.js"></script>
-
+<!-- for development use this line instead: -->
+<!-- 
+<script data-main="/app.js" src="/lib/require/require.js"></script>
+-->
 </body>
 </html>
