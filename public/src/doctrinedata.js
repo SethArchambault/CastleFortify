@@ -41,9 +41,9 @@ define([], function() {
         "son4" : 1023,
         "vault" : 999,
         "wife" : 1010,
-        "wife1" : 1011,
-        "wife2" : 1012,
-        "wife3" : 1013
+        "wife2" : 1011,
+        "wife3" : 1012,
+        "wife4" : 1013
     };
 
     var prices = {
@@ -74,14 +74,24 @@ define([], function() {
         "chiwawa" : 100,
         "cat" : 20,
         "daughter" : 0,
+        "daughter2" : 0,
+        "daughter3" : 0,
+        "daughter4" : 0,
+        "son" : 0,
+        "son2" : 0,
+        "son3" : 0,
+        "son4" : 0,
         "vault" : 0,
-        "wife" : 0
+        "wife" : 0,
+        "wife2" : 0,
+        "wife3" : 0,
+        "wife4" : 0
     };
 
     // private methods
     
     var getPrice = function(key) {
-        if (prices[key])
+        if (prices[key] !== undefined)
         {
             return prices[key];
         }
@@ -94,7 +104,7 @@ define([], function() {
 
 
     var getCode = function(doctrine_key) {
-        if (doctrine_codes[doctrine_key])
+        if (doctrine_codes[doctrine_key] !== undefined)
         {
             return doctrine_codes[doctrine_key];        
         }
