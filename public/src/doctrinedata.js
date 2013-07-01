@@ -79,12 +79,30 @@ define([], function() {
     };
 
     // private methods
+    
     var getPrice = function(key) {
-        return prices[key];
+        if (prices[key])
+        {
+            return prices[key];
+        }
+        else
+        {
+            console.log("public/src/doctrinedata.js function getPrice - No price for " + key);
+            return 0;
+        }
     };
 
+
     var getCode = function(doctrine_key) {
-        return doctrine_codes[doctrine_key];
+        if (doctrine_codes[doctrine_key])
+        {
+            return doctrine_codes[doctrine_key];        
+        }
+        else
+        {
+            console.log("public/src/doctrinedata.js function getCode - No doctrine code for " + doctrine_key);
+            return 0;
+        }
     };
 
     function getKey(collection, value)
