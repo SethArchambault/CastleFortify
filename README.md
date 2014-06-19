@@ -3,6 +3,8 @@ CastleFortify
 
 This is no longer under development!  Check out Castle Draft: http://castledraft.com/editor/
 
+-------
+
 Save and Share your Castle Doctrine designs. Also, designs are saved in simple JSON code, so they can be used in any of your own apps. 
 
 http://castlefortify.com
